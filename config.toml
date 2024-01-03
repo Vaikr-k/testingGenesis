@@ -46,8 +46,3 @@ StaticNodes = ["enode://db72f559e1d730162331b4f87a1023f805e43c3c86f8542383755508
                 ]
 
 
-[Node.LogConfig]
-FileRoot = ""
-FilePath = "geth.log"
-MaxBytesSize = 10485760
-Level = "info"
