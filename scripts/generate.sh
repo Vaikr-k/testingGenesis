@@ -14,7 +14,7 @@ function generate_local() {
     bash ${basedir}/generate-systemReward.sh --network local
     bash ${basedir}/generate-slashIndicator.sh --network local
     forge build
-    node ${basedir}/generate-genesis.js --chainId 714
+    node ${basedir}/generate-genesis.js --chainId 714 
 }
 
 function generate_QA() {
@@ -28,13 +28,13 @@ function generate_QA() {
 }
 
 function generate_testnet() {
-    bash ${basedir}/generate-system.sh --bscChainId 0061
+    bash ${basedir}/generate-system.sh --bscChainId 0083
     bash ${basedir}/generate-crosschain.sh --bscChainId 0061
     bash ${basedir}/generate-relayerHub.sh --network testnet
     bash ${basedir}/generate-tendermintLightClient.sh --initConsensusStateBytes "42696e616e63652d436861696e2d47616e67657300000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000aea1ac326886b992a991d21a6eb155f41b77867cbf659e78f31d89d8205122a84d1be64f0e9a466c2e66a53433928192783e29f8fa21beb2133499b5ef770f60000000e8d4a5100099308aa365c40554bc89982af505d85da95251445d5dd4a9bb37dd2584fd92d3000000e8d4a5100001776920ff0b0f38d78cf95c033c21adf7045785114e392a7544179652e0a612000000e8d4a51000"
     bash ${basedir}/generate-validatorSet.sh --initBurnRatio 1000 --initValidatorSetBytes "f901a880f901a4f844941284214b9b9c85549ab3d2b972df0deef66ac2c9946ddf42a51534fc98d0c0a3b42c963cace8441ddf946ddf42a51534fc98d0c0a3b42c963cace8441ddf8410000000f84494a2959d3f95eae5dc7d70144ce1b73b403b7eb6e0948081ef03f1d9e0bb4a5bf38f16285c879299f07f948081ef03f1d9e0bb4a5bf38f16285c879299f07f8410000000f8449435552c16704d214347f29fa77f77da6d75d7c75294dc4973e838e3949c77aced16ac2315dc2d7ab11194dc4973e838e3949c77aced16ac2315dc2d7ab1118410000000f84494980a75ecd1309ea12fa2ed87a8744fbfc9b863d594cc6ac05c95a99c1f7b5f88de0e3486c82293b27094cc6ac05c95a99c1f7b5f88de0e3486c82293b2708410000000f84494f474cf03cceff28abc65c9cbae594f725c80e12d94e61a183325a18a173319dd8e19c8d069459e217594e61a183325a18a173319dd8e19c8d069459e21758410000000f84494b71b214cb885500844365e95cd9942c7276e7fd894d22ca3ba2141d23adab65ce4940eb7665ea2b6a794d22ca3ba2141d23adab65ce4940eb7665ea2b6a78410000000"
     forge build
-    node ${basedir}/generate-genesis.js --chainId 97
+    node ${basedir}/generate-genesis.js --chainId 131
 }
 
 function generate_mainnet() {

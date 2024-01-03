@@ -15,8 +15,8 @@ contract RelayerHub is IRelayerHub, System, IParamSubscriber {
     uint256 public constant INIT_DUES = 1e17;
 
     
-      address public constant WHITELIST_1 = 0xb005741528b86F5952469d80A8614591E3c5B632;
-      address public constant WHITELIST_2 = 0x446AA6E0DC65690403dF3F127750da1322941F3e;
+      address public constant WHITELIST_1 = 0x58a42F3E72ED85D5460df3E57100766881f25ff1;
+      address public constant WHITELIST_2 = 0x343D38Bc4cC161914c90f1AE38b0A325cB5f91B7;
     
 
     uint256 internal requiredDeposit; // have to keep it to not break the storage layout
@@ -64,7 +64,8 @@ contract RelayerHub is IRelayerHub, System, IParamSubscriber {
     function init() external onlyNotInit {
         requiredDeposit = INIT_REQUIRED_DEPOSIT;
         dues = INIT_DUES;
-        alreadyInit = true;
+        whitelistInit();
+alreadyInit = true;
     }
 
     function unregister() external exist onlyInit {
@@ -77,7 +78,7 @@ contract RelayerHub is IRelayerHub, System, IParamSubscriber {
         emit relayerUnRegister(msg.sender);
     }
 
-    function whitelistInit() external {
+    function whitelistInit() public {
         require(!whitelistInitDone, "the whitelists already updated");
         addInitRelayer(WHITELIST_1);
         addInitRelayer(WHITELIST_2);

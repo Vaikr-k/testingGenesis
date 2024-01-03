@@ -34,7 +34,7 @@ contract BSCValidatorSet is IBSCValidatorSet, System, IParamSubscriber, IApplica
   uint256 public constant EXPIRE_TIME_SECOND_GAP = 1000;
   uint256 public constant MAX_NUM_OF_VALIDATORS = 100;
 
-  bytes public constant INIT_VALIDATORSET_BYTES = hex"f87680f873f871949fb29aac15b9a4b7f17c3385939b007540f4d791949fb29aac15b9a4b7f17c3385939b007540f4d791949fb29aac15b9a4b7f17c3385939b007540f4d79164b085e6972fc98cd3c81d64d40e325acfed44365b97a7567a27939c14dbc7512ddcf54cb1284eb637cfa308ae4e00cb5588";
+  bytes public constant INIT_VALIDATORSET_BYTES = hex"f901a880f901a4f844941284214b9b9c85549ab3d2b972df0deef66ac2c9946ddf42a51534fc98d0c0a3b42c963cace8441ddf946ddf42a51534fc98d0c0a3b42c963cace8441ddf8410000000f84494a2959d3f95eae5dc7d70144ce1b73b403b7eb6e0948081ef03f1d9e0bb4a5bf38f16285c879299f07f948081ef03f1d9e0bb4a5bf38f16285c879299f07f8410000000f8449435552c16704d214347f29fa77f77da6d75d7c75294dc4973e838e3949c77aced16ac2315dc2d7ab11194dc4973e838e3949c77aced16ac2315dc2d7ab1118410000000f84494980a75ecd1309ea12fa2ed87a8744fbfc9b863d594cc6ac05c95a99c1f7b5f88de0e3486c82293b27094cc6ac05c95a99c1f7b5f88de0e3486c82293b2708410000000f84494f474cf03cceff28abc65c9cbae594f725c80e12d94e61a183325a18a173319dd8e19c8d069459e217594e61a183325a18a173319dd8e19c8d069459e21758410000000f84494b71b214cb885500844365e95cd9942c7276e7fd894d22ca3ba2141d23adab65ce4940eb7665ea2b6a794d22ca3ba2141d23adab65ce4940eb7665ea2b6a78410000000";
 
   uint32 public constant ERROR_UNKNOWN_PACKAGE_TYPE = 101;
   uint32 public constant ERROR_FAIL_CHECK_VALIDATORS = 102;
@@ -170,7 +170,10 @@ contract BSCValidatorSet is IBSCValidatorSet, System, IParamSubscriber, IApplica
   function init() external onlyNotInit{
     (IbcValidatorSetPackage memory validatorSetPkg, bool valid)= decodeValidatorSetSynPackage(INIT_VALIDATORSET_BYTES);
     require(valid, "failed to parse init validatorSet");
-    for (uint i; i<validatorSetPkg.validatorSet.length; ++i) {
+    ValidatorExtra memory validatorExtra;
+for (uint i; i<validatorSetPkg.validatorSet.length; ++i) {
+ validatorExtraSet.push(validatorExtra);
+ validatorExtraSet[i].voteAddress=validatorSetPkg.voteAddrs[i];
       currentValidatorSet.push(validatorSetPkg.validatorSet[i]);
       currentValidatorSetMap[validatorSetPkg.validatorSet[i].consensusAddress] = i+1;
     }

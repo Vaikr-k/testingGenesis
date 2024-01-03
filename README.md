@@ -11,7 +11,7 @@ npm install
 
 Install foundry:
 ```shell script
-curl -L https://foundry.paradigm.xyz | bash
+curl -L https://foundry.paradigm.xyz | bash 
 foundryup
 forge install --no-git --no-commit foundry-rs/forge-std@v1.1.1
 ```
@@ -60,7 +60,7 @@ All system contracts will be flattened and output into `${workspace}/contracts/f
 
 ## How to generate mainnet/testnet/QA genesis file
 
-```shell 
+```shell  
 bash scripts/generate.sh mainnet
 bash scripts/generate.sh testnet
 bash scripts/generate.sh QA
