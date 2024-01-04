@@ -4,9 +4,9 @@ const RLP = require('rlp');
 // Configure
 const validators = [
   {
-    consensusAddr: '0x58a42F3E72ED85D5460df3E57100766881f25ff1',
-    feeAddr: '0x343D38Bc4cC161914c90f1AE38b0A325cB5f91B7',
-    bscFeeAddr: '0x8de4d0ef75ca448FeAF5805D7570B14bcdDa62e2',
+    consensusAddr: '0x51223Fa44F1839b05077feEa6e019EeB18707FE7',
+    feeAddr: '0xe4E08aeCC429a56CE4B8Ea5a098A6F7b78f5742d',
+    bscFeeAddr: '0x5cFB8ED8cBe55593696cd11d7b37934D4C105e4D',
     votingPower: 0x0000000000000064,
   },
 ];
