@@ -1,6 +1,6 @@
 {
   "config": {
-    "chainId": 131,
+    "chainId": 714,
     "homesteadBlock": 0,
     "eip150Block": 0,
     "eip155Block": 0,
@@ -93,7 +93,7 @@
     "0x42D596440775C90db8d9187b47650986E1063493": {
       "balance": "0x1000000000000000000000"
     },
-    "51223Fa44F1839b05077feEa6e019EeB18707FE7": {
+    "f5a87527C8f3CeeF0750E8588BE28F6D5d765FC0": {
       "balance": "0x84595161401484a000000"
     }
   },

@@ -41,8 +41,6 @@ WSModules = ["net", "web3", "eth"]
 MaxPeers = 50
 NoDiscovery = false
 TrustedNodes = []
-StaticNodes = ["enode://db72f559e1d730162331b4f87a1023f805e43c3c86f85423837555088cc75b92851bc83e7f680efee1601863e1a0b631a185632b1faceeb5645216c10fbfa317@172.31.15.255:30303",
-               "enode://f06b0393f5e927bb6a4fd31c2125db337facf32234cab52d3fc87c0c01431a8e72d4a0ed6f3c38a982fde190f2be4565e3076d2bdb5bcd34da4158e791da651b@127.0.0.1:0?discport=30305",
-                ]
+StaticNodes = []
 
 
